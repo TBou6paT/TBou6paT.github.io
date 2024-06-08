@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Алхимия</title>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="rgb(0, 84, 147)">
+  <meta name="description"
+        content="Алхимия. Игра основана на принципе комбинирования элементов, с возможностью создания новых предметов и процессов. ">
+  <meta name="theme-color" content="rgb(0, 84, 147)">
+  <!--Стили-->
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(55260583, "init", {
+      clickmap:true,
+      trackLinks:true,
+      accurateTrackBounce:true,
+      webvisor:true
+    });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/55260583" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" href="images/poison.png" type="image/x-icon">
+  <script src="https://yandex.ru/games/sdk/v2"></script>
+</head>
+<body>
+<div class="table">
+  <p class="got"></p>
+  <div class="menu">
+    <div class="info"></div>
+    <div class="add"></div>
+    <div class="drop"></div>
+  </div>
+  <div class="rules none">
+    <button class="close">Закрыть</button>
+    <h2>Правила</h2>
+    <ul>
+      <li>Задача игры Алхимия - создавать элементы. В начале вы получаете 4 элемента, различные комбинации которых
+        создают новые.</li>
+      <li>Чтобы создать элемент нужно перетащить один на другой.</li>
+      <li>Нажав на плюс, вы можете добавить на стол элементы из коллекции.</li>
+      <li>Двойной клик по элементу создаст его копию.</li>
+      <li>Перетащив ненужный элемент в корзину, вы удалите его с экрана. А нажав на неё, удалятся все элементы на
+        экране.</li>
+      <li>Вот и всё, удачной игры!</li>
+    </ul>
+    <div class="aboutDelete"><span class="red">ВНИМАНИЕ!</span> Данная кнопка очистит прогресс игры!
+      <button class="delete" id="delete">Сбросить прогресс</button>
+    </div>
+    <div class="blackout none"></div>
+    <div class="caution none">
+        <p>Вы уверены, что хотите сбросить прогресс?</p>
+      <div class="buttons">
+      <button id="notDelete">Нет! Вернуться</button>
+      <button class="delete" id="deleteCertain">Сбросить прогресс</button>
+      </div>
+    </div>
+  </div>
+  <div class="icons none">
+    <div class="iconsHead">
+      <input type="text" placeholder="Поиск">
+      <button class="addIcons">Закрыть</button>
+    </div>
+  </div>
+</div>
+<script src="main.js"></script>
+<script src="sw.js"></script>
+<script>
+  if('serviceWorker' in navigator){
+    navigator.serviceWorker
+            .register('sw.js')
+            .then(function(reg) {
+              console.log('Registration succeeded. Scope is ' + reg.scope);
+            })
+            .catch(function(error) {
+              console.error('Trouble with sw: ', error);
+            });
+  }
+</script>
+</body>
+</html>
