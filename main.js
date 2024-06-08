@@ -84,7 +84,7 @@ window.onload = function(){
     let localMapElements = localStorage.getItem('mapElements');
     let mapElements = localMapElements ?  JSON.parse(localMapElements): [];
     let got = document.querySelector('.got');
-    let myElements =  localMyElements ? localMyElements.split(',') : [2,3,4,5,6,7,8];
+    let myElements =  localMyElements ? localMyElements.split(',') : [4,6];
     function getNextElement(){
         for(let i = 0; i < ELEMENTS.length; i++){
             if(i === 161) continue;
